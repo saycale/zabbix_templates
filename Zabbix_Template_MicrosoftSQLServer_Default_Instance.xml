@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2016-01-08T04:29:43Z</date>
+    <date>2016-01-08T06:51:00Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -38,6 +38,9 @@
                 </application>
                 <application>
                     <name>MSSQL:Transactions</name>
+                </application>
+                <application>
+                    <name>Windows:Processor</name>
                 </application>
             </applications>
             <items>
@@ -760,7 +763,11 @@
                     <port/>
                     <description>% Processor Time is the percentage of elapsed time that all of the threads of this process used the processor to execute instructions.</description>
                     <inventory_link>0</inventory_link>
-                    <applications/>
+                    <applications>
+                        <application>
+                            <name>Windows:Processor</name>
+                        </application>
+                    </applications>
                     <valuemap/>
                     <logtimefmt/>
                 </item>
@@ -770,7 +777,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>perf_counter[&quot;\Processor Information(_Total)\% Processor Time&quot;]</key>
+                    <key>perf_counter[&quot;\Processor(_Total)\% Processor Time&quot;]</key>
                     <delay>60</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -799,7 +806,11 @@
                     <port/>
                     <description/>
                     <inventory_link>0</inventory_link>
-                    <applications/>
+                    <applications>
+                        <application>
+                            <name>Windows:Processor</name>
+                        </application>
+                    </applications>
                     <valuemap/>
                     <logtimefmt/>
                 </item>
@@ -809,7 +820,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>perf_counter[&quot;\Processor Information(_Total)\% User Time&quot;]</key>
+                    <key>perf_counter[&quot;\Processor(_Total)\% User Time&quot;]</key>
                     <delay>60</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -838,7 +849,11 @@
                     <port/>
                     <description/>
                     <inventory_link>0</inventory_link>
-                    <applications/>
+                    <applications>
+                        <application>
+                            <name>Windows:Processor</name>
+                        </application>
+                    </applications>
                     <valuemap/>
                     <logtimefmt/>
                 </item>
@@ -1542,7 +1557,7 @@
                     <type>0</type>
                     <item>
                         <host>Template_MicrosoftSQLServer_Default_Instance</host>
-                        <key>perf_counter[&quot;\Processor Information(_Total)\% User Time&quot;]</key>
+                        <key>perf_counter[&quot;\Processor(_Total)\% User Time&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1554,7 +1569,7 @@
                     <type>0</type>
                     <item>
                         <host>Template_MicrosoftSQLServer_Default_Instance</host>
-                        <key>perf_counter[&quot;\Processor Information(_Total)\% Processor Time&quot;]</key>
+                        <key>perf_counter[&quot;\Processor(_Total)\% Processor Time&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
