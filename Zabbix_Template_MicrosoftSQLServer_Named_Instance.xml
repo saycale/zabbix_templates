@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2016-01-08T06:52:54Z</date>
+    <date>2016-01-13T04:39:54Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -9,8 +9,8 @@
     </groups>
     <templates>
         <template>
-            <template>Zabbix_Template_MicrosoftSQLServer_Named_Instance</template>
-            <name>Zabbix_Template_MicrosoftSQLServer_Named_Instance</name>
+            <template>Template_MicrosoftSQLServer_Named_Instance</template>
+            <name>Template_MicrosoftSQLServer_Named_Instance</name>
             <description/>
             <groups>
                 <group>
@@ -42,13 +42,10 @@
                 <application>
                     <name>MSSQLAgent</name>
                 </application>
-                <application>
-                    <name>Windows:Processor</name>
-                </application>
             </applications>
             <items>
                 <item>
-                    <name>SQL Named Instance:Batch Requests per second</name>
+                    <name>MSSQL:{$MSSQL_INSTANCE}:Batch Requests per second</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -91,7 +88,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>SQL Named Instance:Blocked Processes</name>
+                    <name>MSSQL:{$MSSQL_INSTANCE}:Blocked Processes</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -134,7 +131,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>SQL Named Instance:Buffer cache hit ratio</name>
+                    <name>MSSQL:{$MSSQL_INSTANCE}:Buffer cache hit ratio</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -177,7 +174,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>SQL Named Instance:Database Pages</name>
+                    <name>MSSQL:{$MSSQL_INSTANCE}:Database Pages</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -220,7 +217,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>SQL Named Instance:Data File Size</name>
+                    <name>MSSQL:{$MSSQL_INSTANCE}:Data File Size</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>1</multiplier>
@@ -263,265 +260,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>SQL Named Instance:Locks:Average Wait Time</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Locks(_Total)\Average Wait Time (ms)&quot;]</key>
-                    <delay>60</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>0</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description>The average amount of wait time (milliseconds) for each lock request that resulted in a wait.</description>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>MSSQL:Locks</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>SQL Named Instance:Locks:Number of Deadlocks per second</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Locks(_Total)\Number of Deadlocks/sec&quot;]</key>
-                    <delay>60</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>0</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description>If you see these happening then check with your DBA or application engineer because deadlocks are a SQL performance killer.</description>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>MSSQL:Locks</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>SQL Named Instance:Locks:Waits per second</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Locks(_Total)\Lock Waits/sec&quot;]</key>
-                    <delay>60</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>0</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description>Measures how much time the database is having to wait to deliver its data because of other transactions locking tables.</description>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>MSSQL:Locks</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>SQL Named Instance:Log File Size</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <multiplier>1</multiplier>
-                    <snmp_oid/>
-                    <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Databases(_Total)\Log File(s) Size (KB)&quot;]</key>
-                    <delay>300</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>0</value_type>
-                    <allowed_hosts/>
-                    <units>b</units>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1024</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>MSSQL:Databases</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>SQL Named Instance:Longest Running Transaction</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Transactions\Longest Transaction Running Time&quot;]</key>
-                    <delay>60</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description>The running time of the longest running transaction, in seconds</description>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>MSSQL:Transactions</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>SQL Named Instance:Memory:Connection Memory</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <multiplier>1</multiplier>
-                    <snmp_oid/>
-                    <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Memory Manager\Connection Memory (KB)&quot;]</key>
-                    <delay>300</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>0</value_type>
-                    <allowed_hosts/>
-                    <units>b</units>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1024</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description>How much OS memory the SQL service connections are using.</description>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>MSSQL:Memory manager</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>SQL Named Instance:Memory:Granted Workspace Memory</name>
+                    <name>MSSQL:{$MSSQL_INSTANCE}:Granted Workspace Memory</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>1</multiplier>
@@ -564,7 +303,265 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>SQL Named Instance:Memory:Total Server Memory</name>
+                    <name>MSSQL:{$MSSQL_INSTANCE}:Locks:Average Wait Time</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Locks(_Total)\Average Wait Time (ms)&quot;]</key>
+                    <delay>60</delay>
+                    <history>7</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>The average amount of wait time (milliseconds) for each lock request that resulted in a wait.</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>MSSQL:Locks</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>MSSQL:{$MSSQL_INSTANCE}:Locks:Number of Deadlocks per second</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Locks(_Total)\Number of Deadlocks/sec&quot;]</key>
+                    <delay>60</delay>
+                    <history>7</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>If you see these happening then check with your DBA or application engineer because deadlocks are a SQL performance killer.</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>MSSQL:Locks</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>MSSQL:{$MSSQL_INSTANCE}:Locks:Waits per second</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Locks(_Total)\Lock Waits/sec&quot;]</key>
+                    <delay>60</delay>
+                    <history>7</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Measures how much time the database is having to wait to deliver its data because of other transactions locking tables.</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>MSSQL:Locks</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>MSSQL:{$MSSQL_INSTANCE}:Log File Size</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <multiplier>1</multiplier>
+                    <snmp_oid/>
+                    <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Databases(_Total)\Log File(s) Size (KB)&quot;]</key>
+                    <delay>300</delay>
+                    <history>7</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>b</units>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1024</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>MSSQL:Databases</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>MSSQL:{$MSSQL_INSTANCE}:Longest Running Transaction</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Transactions\Longest Transaction Running Time&quot;]</key>
+                    <delay>60</delay>
+                    <history>7</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>The running time of the longest running transaction, in seconds</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>MSSQL:Transactions</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>MSSQL:{$MSSQL_INSTANCE}:Memory:Connection Memory</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <multiplier>1</multiplier>
+                    <snmp_oid/>
+                    <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Memory Manager\Connection Memory (KB)&quot;]</key>
+                    <delay>300</delay>
+                    <history>7</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>b</units>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1024</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>How much OS memory the SQL service connections are using.</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>MSSQL:Memory manager</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>MSSQL:{$MSSQL_INSTANCE}:Memory:Total Server Memory</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>1</multiplier>
@@ -607,50 +604,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>SQL Named Instance:Number Failed Jobs</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>perf_counter[&quot;\SQLAgent:Jobs(_Total)\Failed jobs&quot;]</key>
-                    <delay>3600</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>0</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>MSSQLAgent</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>SQL Named Instance:Number Users Connected</name>
+                    <name>MSSQL:{$MSSQL_INSTANCE}:Number Users Connected</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -693,7 +647,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>SQL Named Instance:Page Life Expectancy</name>
+                    <name>MSSQL:{$MSSQL_INSTANCE}:Page Life Expectancy</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -736,341 +690,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>SQL Named Instance:Processor:% sqlservr</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>perf_counter[&quot;\Process(sqlservr)\% Processor Time&quot;]</key>
-                    <delay>60</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>0</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description>% Processor Time is the percentage of elapsed time that all of the threads of this process used the processor to execute instructions.</description>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Windows:Processor</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>SQL Named Instance:Processor:% Total Time</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>perf_counter[&quot;\Processor(_Total)\% Processor Time&quot;]</key>
-                    <delay>60</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>0</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Windows:Processor</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>SQL Named Instance:Processor:% User Time</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>perf_counter[&quot;\Processor(_Total)\% User Time&quot;]</key>
-                    <delay>60</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>0</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Windows:Processor</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>SQL Named Instance:Service State:Analysis Services</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>service_state[MSSQLServerOLAPService]</key>
-                    <delay>60</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications/>
-                    <valuemap>
-                        <name>Windows service state</name>
-                    </valuemap>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>SQL Named Instance:Service State:Integration Services</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>service_state[MSDtsServer]</key>
-                    <delay>60</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications/>
-                    <valuemap>
-                        <name>Windows service state</name>
-                    </valuemap>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>SQL Named Instance:Service State:Reporting Services</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>service_state[ReportServer]</key>
-                    <delay>60</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications/>
-                    <valuemap>
-                        <name>Windows service state</name>
-                    </valuemap>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>SQL Named Instance:Service State:SQL Agent</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>service_state[SQLServerAgent]</key>
-                    <delay>60</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications/>
-                    <valuemap>
-                        <name>Windows service state</name>
-                    </valuemap>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>SQL Named Instance:Service State:SQL Server</name>
-                    <type>0</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>service_state[MSSQLSERVER]</key>
-                    <delay>60</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications/>
-                    <valuemap>
-                        <name>Windows service state</name>
-                    </valuemap>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>SQL Named Instance:SQL Errors per second</name>
+                    <name>MSSQL:{$MSSQL_INSTANCE}:SQL Errors per second</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -1113,7 +733,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>SQL Named Instance:Transactions per second</name>
+                    <name>MSSQL:{$MSSQL_INSTANCE}:Transactions per second</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -1164,7 +784,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Zabbix_Template_MicrosoftSQLServer_Named_Instance:perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Transactions\Longest Transaction Running Time&quot;].last(0)}&gt;3600</expression>
+            <expression>{Template_MicrosoftSQLServer_Named_Instance:perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Transactions\Longest Transaction Running Time&quot;].last(0)}&gt;3600</expression>
             <name>SQL Named Instance: Long running transaction: {ITEM.VALUE} seconds</name>
             <url/>
             <status>0</status>
@@ -1174,7 +794,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Zabbix_Template_MicrosoftSQLServer_Named_Instance:perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:General Statistics\Processes blocked&quot;].last(600)}&gt;10</expression>
+            <expression>{Template_MicrosoftSQLServer_Named_Instance:perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:General Statistics\Processes blocked&quot;].last(600)}&gt;10</expression>
             <name>SQL Named Instance: Many Blocked Processes: {ITEM.VALUE}</name>
             <url/>
             <status>0</status>
@@ -1184,17 +804,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Zabbix_Template_MicrosoftSQLServer_Named_Instance:perf_counter[&quot;\SQLAgent:Jobs(_Total)\Failed jobs&quot;].change(0)}&gt;0</expression>
-            <name>SQL Named Instance: Number Failed Jobs</name>
-            <url/>
-            <status>0</status>
-            <priority>2</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{Zabbix_Template_MicrosoftSQLServer_Named_Instance:perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Locks(_Total)\Number of Deadlocks/sec&quot;].last(0)}&gt;0</expression>
+            <expression>{Template_MicrosoftSQLServer_Named_Instance:perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Locks(_Total)\Number of Deadlocks/sec&quot;].last(0)}&gt;0</expression>
             <name>SQL Named Instance: Number of Deadlocks per second</name>
             <url/>
             <status>0</status>
@@ -1204,62 +814,12 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Zabbix_Template_MicrosoftSQLServer_Named_Instance:perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Buffer Manager\Page Life Expectancy&quot;].last(300)}&lt;300</expression>
+            <expression>{Template_MicrosoftSQLServer_Named_Instance:perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Buffer Manager\Page Life Expectancy&quot;].last(300)}&lt;300</expression>
             <name>SQL Named Instance: Page Life Expectancy low: {ITEM.VALUE}</name>
             <url/>
             <status>0</status>
             <priority>2</priority>
             <description>Memory pressure in SQL Server</description>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{Zabbix_Template_MicrosoftSQLServer_Named_Instance:service_state[MSSQLServerOLAPService].last(0)}&gt;0 and {Zabbix_Template_MicrosoftSQLServer_Named_Instance:service_state[MSSQLServerOLAPService].last(0)}&lt;255</expression>
-            <name>SQL Named Instance: Service State - Analysis Services</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{Zabbix_Template_MicrosoftSQLServer_Named_Instance:service_state[MSDtsServer].last(0)}&gt;0 and {Zabbix_Template_MicrosoftSQLServer_Named_Instance:service_state[MSDtsServer].last(0)}&lt;255</expression>
-            <name>SQL Named Instance: Service State - Integration Services</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{Zabbix_Template_MicrosoftSQLServer_Named_Instance:service_state[ReportServer].last(0)}&gt;0 and {Zabbix_Template_MicrosoftSQLServer_Named_Instance:service_state[ReportServer].last(0)}&lt;255</expression>
-            <name>SQL Named Instance: Service State - Reporting Services</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{Zabbix_Template_MicrosoftSQLServer_Named_Instance:service_state[SQLServerAgent].last(0)}&gt;0 and {Zabbix_Template_MicrosoftSQLServer_Named_Instance:service_state[SQLServerAgent].last(0)}&lt;255</expression>
-            <name>SQL Named Instance: Service State - SQL Agent</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{Zabbix_Template_MicrosoftSQLServer_Named_Instance:service_state[MSSQLSERVER].last(0)}&gt;0 and {Zabbix_Template_MicrosoftSQLServer_Named_Instance:service_state[MSSQLSERVER].last(0)}&lt;255</expression>
-            <name>SQL Named Instance: Service State - SQL Server</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description/>
             <type>0</type>
             <dependencies/>
         </trigger>
@@ -1291,7 +851,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Zabbix_Template_MicrosoftSQLServer_Named_Instance</host>
+                        <host>Template_MicrosoftSQLServer_Named_Instance</host>
                         <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Buffer Manager\Buffer cache hit ratio&quot;]</key>
                     </item>
                 </graph_item>
@@ -1323,7 +883,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Zabbix_Template_MicrosoftSQLServer_Named_Instance</host>
+                        <host>Template_MicrosoftSQLServer_Named_Instance</host>
                         <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Buffer Manager\Database pages&quot;]</key>
                     </item>
                 </graph_item>
@@ -1355,7 +915,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Zabbix_Template_MicrosoftSQLServer_Named_Instance</host>
+                        <host>Template_MicrosoftSQLServer_Named_Instance</host>
                         <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Databases(_Total)\Data File(s) Size (KB)&quot;]</key>
                     </item>
                 </graph_item>
@@ -1367,7 +927,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Zabbix_Template_MicrosoftSQLServer_Named_Instance</host>
+                        <host>Template_MicrosoftSQLServer_Named_Instance</host>
                         <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Databases(_Total)\Log File(s) Size (KB)&quot;]</key>
                     </item>
                 </graph_item>
@@ -1392,18 +952,6 @@
             <ymax_item_1>0</ymax_item_1>
             <graph_items>
                 <graph_item>
-                    <sortorder>2</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>0000C8</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Zabbix_Template_MicrosoftSQLServer_Named_Instance</host>
-                        <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Locks(_Total)\Average Wait Time (ms)&quot;]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
                     <sortorder>1</sortorder>
                     <drawtype>0</drawtype>
                     <color>C80000</color>
@@ -1411,42 +959,22 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Zabbix_Template_MicrosoftSQLServer_Named_Instance</host>
+                        <host>Template_MicrosoftSQLServer_Named_Instance</host>
                         <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Locks(_Total)\Number of Deadlocks/sec&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
-                    <sortorder>0</sortorder>
+                    <sortorder>2</sortorder>
                     <drawtype>0</drawtype>
-                    <color>00C800</color>
+                    <color>0000C8</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Zabbix_Template_MicrosoftSQLServer_Named_Instance</host>
-                        <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Locks(_Total)\Lock Waits/sec&quot;]</key>
+                        <host>Template_MicrosoftSQLServer_Named_Instance</host>
+                        <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Locks(_Total)\Average Wait Time (ms)&quot;]</key>
                     </item>
                 </graph_item>
-            </graph_items>
-        </graph>
-        <graph>
-            <name>MSSQL:Named Instance:Number Failed Jobs</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
-            <graph_items>
                 <graph_item>
                     <sortorder>0</sortorder>
                     <drawtype>0</drawtype>
@@ -1455,8 +983,8 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Zabbix_Template_MicrosoftSQLServer_Named_Instance</host>
-                        <key>perf_counter[&quot;\SQLAgent:Jobs(_Total)\Failed jobs&quot;]</key>
+                        <host>Template_MicrosoftSQLServer_Named_Instance</host>
+                        <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Locks(_Total)\Lock Waits/sec&quot;]</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -1487,7 +1015,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Zabbix_Template_MicrosoftSQLServer_Named_Instance</host>
+                        <host>Template_MicrosoftSQLServer_Named_Instance</host>
                         <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Buffer Manager\Page Life Expectancy&quot;]</key>
                     </item>
                 </graph_item>
@@ -1512,18 +1040,6 @@
             <ymax_item_1>0</ymax_item_1>
             <graph_items>
                 <graph_item>
-                    <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>00CB00</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Zabbix_Template_MicrosoftSQLServer_Named_Instance</host>
-                        <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:General Statistics\User Connections&quot;]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
                     <sortorder>0</sortorder>
                     <drawtype>0</drawtype>
                     <color>C80000</color>
@@ -1531,64 +1047,20 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Zabbix_Template_MicrosoftSQLServer_Named_Instance</host>
+                        <host>Template_MicrosoftSQLServer_Named_Instance</host>
                         <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:General Statistics\Processes blocked&quot;]</key>
-                    </item>
-                </graph_item>
-            </graph_items>
-        </graph>
-        <graph>
-            <name>MSSQL:Named Instance:Processor Time</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
-            <graph_items>
-                <graph_item>
-                    <sortorder>2</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>AA00AA</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Zabbix_Template_MicrosoftSQLServer_Named_Instance</host>
-                        <key>perf_counter[&quot;\Processor(_Total)\% User Time&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>1</sortorder>
                     <drawtype>0</drawtype>
-                    <color>0000DD</color>
+                    <color>00CB00</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Zabbix_Template_MicrosoftSQLServer_Named_Instance</host>
-                        <key>perf_counter[&quot;\Processor(_Total)\% Processor Time&quot;]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>00C800</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Zabbix_Template_MicrosoftSQLServer_Named_Instance</host>
-                        <key>perf_counter[&quot;\Process(sqlservr)\% Processor Time&quot;]</key>
+                        <host>Template_MicrosoftSQLServer_Named_Instance</host>
+                        <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:General Statistics\User Connections&quot;]</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -1612,18 +1084,6 @@
             <ymax_item_1>0</ymax_item_1>
             <graph_items>
                 <graph_item>
-                    <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>00BBBB</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Zabbix_Template_MicrosoftSQLServer_Named_Instance</host>
-                        <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:SQL Statistics\Batch Requests/sec&quot;]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
                     <sortorder>0</sortorder>
                     <drawtype>0</drawtype>
                     <color>00C800</color>
@@ -1631,7 +1091,7 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Zabbix_Template_MicrosoftSQLServer_Named_Instance</host>
+                        <host>Template_MicrosoftSQLServer_Named_Instance</host>
                         <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:Databases(_Total)\Transactions/sec&quot;]</key>
                     </item>
                 </graph_item>
@@ -1643,8 +1103,20 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Zabbix_Template_MicrosoftSQLServer_Named_Instance</host>
+                        <host>Template_MicrosoftSQLServer_Named_Instance</host>
                         <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:SQL Errors(_Total)\Errors/sec&quot;]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>00BBBB</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template_MicrosoftSQLServer_Named_Instance</host>
+                        <key>perf_counter[&quot;\MSSQL${$MSSQL_INSTANCE}:SQL Statistics\Batch Requests/sec&quot;]</key>
                     </item>
                 </graph_item>
             </graph_items>
